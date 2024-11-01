@@ -18,7 +18,7 @@ namespace CS_home
 
             for (int i = 0; i < 10; i++)
             {
-                TestButton testButton = new TestButton(i * 100, 0, 100, 100);
+                TestButton testButton = new TestButton(i,(i % 5) * 100, (i / 5) * 100, 100, 100);
                 Controls.Add(testButton);
             }
 

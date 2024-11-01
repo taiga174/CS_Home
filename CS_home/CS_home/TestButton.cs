@@ -11,11 +11,13 @@ namespace CS_home
 {
      class TestButton : Button
     {
-        public TestButton(int x, int y, int width, int height) 
+        public TestButton(int id,int x, int y, int width, int height) 
         {
             Click += OnClick;
 
-            Text = "ボタン";
+           
+            Text = id.ToString();
+            Console.Write(Text);
 
             Location = new Point(x,y);
             Size = new Size(width,height);
@@ -23,7 +25,7 @@ namespace CS_home
 
         public void OnClick(object sender,EventArgs s) 
         {
-            MessageBox.Show("hello");
+            MessageBox.Show(Text);
         }
     }
 }
