@@ -12,18 +12,40 @@ namespace CS_home
 {
     public partial class Form1 : Form
     {
+        TestLabel _testlabel;
+
+        
+        TestTextBox _textBox;
+
         public Form1()
         {
             InitializeComponent();
 
+            string[] strs =
+            {
+                "あか",
+                "あお",
+                "きいろ",
+                "みどり",
+                "きみどり",
+                "むらさき",
+                "こん",
+                "ぴんく",
+                "しろ",
+                "くろ",
+            };
+
             for (int i = 0; i < 10; i++)
             {
-                TestButton testButton = new TestButton(i,(i % 5) * 100, (i / 5) * 100, 100, 100);
+                TestButton testButton = new TestButton(this, strs[i],(i % 5) * 100, (i / 5) * 100, 100, 100);
                 Controls.Add(testButton);
             }
 
-            TestLabel testLabel = new TestLabel("ラベル",10,300,100,500);
-            Controls.Add(testLabel);
+            _testlabel = new TestLabel("ラベル",10,300,100,500);
+            Controls.Add(_testlabel);
+
+            _textBox = new TestTextBox("テキストボックスです", 150, 400, 500, 100);
+            Controls.Add(_textBox);
 
             //Label label = new Label();
             //label.Location = new Point(30,400);
@@ -63,9 +85,21 @@ namespace CS_home
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void LabelTextUpdate(string str) 
         {
+            _testlabel.LabelTextUpdate(str);
+        }
 
+        public string ButtonLabelReplacement(string str)
+        {
+           string s =  _textBox.ButtonLabelReplacement(str);
+
+            return s;
+        }
+
+        private void Form1_Load(object sender, EventArgs e) 
+        {
+        
         }
     }
 }

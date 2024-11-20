@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace CS_home
 {
-    internal class TestLabel : Label
+     class TestTextBox : TextBox
     {
-        public TestLabel(string str, int x, int y, int width, int height)
+        public TestTextBox(string str, int x, int y, int width, int height)
         {
             Text = str;
 
@@ -19,9 +19,13 @@ namespace CS_home
             Size = new Size(width, height);
         }
 
-        public void LabelTextUpdate(string str) 
+        public string ButtonLabelReplacement(string str)
         {
+            string temp = Text;
+
             Text = str;
+
+            return temp;
         }
     }
 }
